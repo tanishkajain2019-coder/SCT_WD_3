@@ -1,0 +1,107 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #121214;
+    color: #e1e1e6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.game-container {
+    text-align: center;
+    background-color: #1d1d22;
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    max-width: 400px;
+    width: 100%;
+}
+
+h1 {
+    margin-bottom: 1rem;
+    color: #04d361;
+}
+
+.mode-container {
+    margin-bottom: 1rem;
+}
+
+select {
+    background-color: #29292e;
+    color: #fff;
+    border: 1px solid #4d4d57;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    outline: none;
+    cursor: pointer;
+}
+
+.status {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    color: #a8a8b3;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    margin-bottom: 2rem;
+}
+
+.cell {
+    aspect-ratio: 1;
+    background-color: #29292e;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+    user-select: none;
+}
+
+.cell:hover {
+    background-color: #323238;
+}
+
+.cell.taken {
+    cursor: not-allowed;
+}
+
+/* Color coding symbols for distinct visibility */
+.cell:not(:empty) {
+    animation: pop 0.3s ease-in-out;
+}
+
+@keyframes pop {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.reset-btn {
+    background-color: #04d361;
+    color: #121214;
+    border: none;
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: filter 0.2s;
+    width: 100%;
+}
+
+.reset-btn:hover {
+    filter: brightness(1.1);
+}
